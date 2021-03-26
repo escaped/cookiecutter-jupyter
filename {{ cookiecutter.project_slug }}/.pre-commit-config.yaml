@@ -2,6 +2,15 @@
 repos:
   - repo: local
     hooks:
+      # convert notebooks to python files
+      - id: jupytext
+        name: jupytext
+        entry: poetry run jupytext --set-formats "notebooks///ipynb,scripts///py:percent" --pipe black --pre-commit
+        pass_filenames: false
+        language: system
+
+  - repo: local
+    hooks:
       - id: black
         name: black
         language: system

@@ -2,10 +2,9 @@
   "author": "",
   "author_email": "",
   "github_username": "",
-  "project_name": "Python Package",
+  "project_name": "Data Project",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-  "short_description": "Python Package Boilerplate",
+  "short_description": "Python Data Science Boilerplate",
   "version": "0.1.0",
-  "line_length": "88",
-  "uses_django": "y"
+  "line_length": "88"
 }

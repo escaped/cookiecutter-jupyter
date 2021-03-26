@@ -1,8 +1,28 @@
 # Cookiecutter PyPackage
 
-A modern opinionated [Cookiecutter] template for Python packages and applications using [Poetry].
+A modern opinionated [Cookiecutter] template for jupyter based projects using [Poetry].
+
+This project is based on [cookiecutter-pypackage](https://github.com/escaped/cookiecutter-pypackage) and provides a way to make code reviews for notebooks possible.
+Whenever a jupyter notebook (`notebooks/` folder) is added to a commit, the cell ouputs are stripped and it is converted to a python file (`scripts/` folder).
+We end up with two version in the repository: the `.ipynb` is kept for development and the `.py` can be used for code reviews.
+
+The generated project has the following structure:
+
+```text
+.
+└── my-project/
+    ├── my_project   # shared python code, which can be used in all notebook, `from my_projects import ...` 
+    ├── notebooks    # all .ipynb files go here
+    ├── scripts      # all converted notebooks will be placed here
+    └── tests        # place tests for the shared python code here
+```
 
 ## Features
+
+* Notebooks:
+  * [jupyterlab]: Next-generation web-based user interface for Project Jupyter
+  * [jupytext]: convert jupyter notebooks to python
+  * [nbstripout]: strip notebook outputs
 
 * [Poetry]: Dependency management and packaging
 * [Tox]: Easily run tests for different python versions
@@ -53,7 +73,7 @@ pipx install cruft
 Generate a new python package
 
 ```sh
-cruft create https://github.com/escaped/cookiecutter-pypackage.git
+cruft create https://github.com/escaped/cookiecutter-jupyter.git
 cd <chosen project slug>
 git init
 git add .
@@ -93,7 +113,10 @@ While creating the access token, the following permissions have to be granted
 [flake8-debugger]: https://pypi.org/project/flake8-debugger/
 [flake8]: http://flake8.pycqa.org/en/latest/
 [isort]: https://github.com/timothycrosley/isort
+[jupyterlab]: https://jupyterlab.readthedocs.io/en/stable/
+[jupytext]: https://github.com/mwouts/jupytext
 [mypy]: http://mypy-lang.org/
+[nbstripout]: https://github.com/kynan/nbstripout
 [pdbpp]: https://github.com/pdbpp/pdbpp
 [PEP8]: https://www.python.org/dev/peps/pep-0008/
 [pep8-naming]: https://pypi.org/project/pep8-naming/

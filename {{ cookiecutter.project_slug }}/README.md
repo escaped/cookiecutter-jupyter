@@ -12,13 +12,8 @@
 
 * Python 3.6.1 or newer
 
-## Installation
-
-```sh
-pip install {{ cookiecutter.project_name}}
-```
-
 ## Development
+
 
 This project uses [poetry](https://poetry.eustace.io/) for packaging and
 managing all dependencies and [pre-commit](https://pre-commit.com/) to run
@@ -28,15 +23,21 @@ managing all dependencies and [pre-commit](https://pre-commit.com/) to run
 Additionally, [pdbpp](https://github.com/pdbpp/pdbpp) and [better-exceptions](https://github.com/qix-/better-exceptions) are installed to provide a better debugging experience.
 To enable `better-exceptions` you have to run `export BETTER_EXCEPTIONS=1` in your current session/terminal.
 
+### Install
+
 Clone this repository and run
 
 ```bash
 poetry install
+poetry run nbstripout --install
 poetry run pre-commit install
 ```
 
 to create a virtual enviroment containing all dependencies.
-Afterwards, You can run the test suite using
+
+### Tests
+
+You can run the test suite using
 
 ```bash
 poetry run pytest
@@ -48,7 +49,7 @@ style.
 ### Cookiecutter template
 
 This project was created using [cruft](https://github.com/cruft/cruft) and the
-[cookiecutter-pyproject](https://github.com/escaped/cookiecutter-pypackage) template.
+[cookiecutter-jupyter](https://github.com/escaped/cookiecutter-jupyter) template.
 In order to update this repository to the latest template version run
 
 ```sh

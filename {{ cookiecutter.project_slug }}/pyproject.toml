@@ -15,8 +15,7 @@ repository = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecut
 
 classifiers = [
   "Development Status :: 4 - Beta",
-  "Environment :: Web Environment",{% if cookiecutter.uses_django == 'y' %}
-  "Framework :: Django",{% endif %}
+  "Environment :: Web Environment",
   "Intended Audience :: Developers",
   "Operating System :: OS Independent",
   "Programming Language :: Python",
@@ -36,11 +35,6 @@ packages = [
 
 [tool.poetry.dependencies]
 python = ">=3.6.1, <4.0"
-{%- if cookiecutter.uses_django == 'y' %}
-
-django = "^2.2"
-django-environ = "^0.4.5"
-{%- endif %}
 
 [tool.poetry.dev-dependencies]
 autoflake = "^1.4"
@@ -52,15 +46,15 @@ flake8-builtins = "^1.5.3"
 flake8-comprehensions = "^3.3.1"
 flake8-debugger = "^4.0.0"
 isort = "^5.5.2"
+jupyterlab = "^3.0.12"
+jupytext = "^1.11.0"
 mypy = "^0.800"
+nbstripout = "^0.3.9"
 pdbpp = "^0.10.2"
 pep8-naming = "^0.11.1"
 pre-commit = "^2.7.1"
 pytest = "^6.0.1"
 pytest-cov = "^2.10.1"
-{% if cookiecutter.uses_django == 'y' -%}
-pytest-django = "^3.9.0"
-{% endif -%}
 pytest-mock = "^3.3.1"
 tox = "^3.20.0"
 tox-gh-actions = "^1.3.0"

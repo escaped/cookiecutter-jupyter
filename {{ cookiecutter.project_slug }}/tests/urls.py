@@ -1,2 +1,0 @@
-urlpatterns = []  # type: ignore
-
