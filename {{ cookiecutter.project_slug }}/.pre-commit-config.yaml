@@ -5,7 +5,7 @@ repos:
       # convert notebooks to python files
       - id: jupytext
         name: jupytext
-        entry: poetry run jupytext --set-formats "notebooks///ipynb,scripts///py:percent" --pipe black --pre-commit
+        entry: poetry run jupytext --set-formats "notebooks///ipynb,scripts///py:percent" --pipe black --pre-commit --from ipynb
         pass_filenames: false
         language: system
 
