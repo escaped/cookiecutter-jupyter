@@ -10,7 +10,7 @@
 
 ## Requirements
 
-* Python 3.6.1 or newer
+* Python 3.6.2 or newer
 
 ## Development
 
